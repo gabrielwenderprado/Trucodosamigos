@@ -1,0 +1,127 @@
+/* Arena Neon: fundo ink navy, ciano elétrico, coral competitivo e dourado reservado ao pódio. */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root { --background: oklch(0.12 0.025 255); --foreground: oklch(0.96 0.015 190); --card: oklch(0.16 0.03 255); --card-foreground: oklch(0.96 0.015 190); --popover: oklch(0.18 0.03 255); --popover-foreground: oklch(0.96 0.015 190); --primary: oklch(0.88 0.16 178); --primary-foreground: oklch(0.12 0.025 255); --secondary: oklch(0.21 0.04 255); --secondary-foreground: oklch(0.82 0.04 190); --muted: oklch(0.2 0.035 255); --muted-foreground: oklch(0.64 0.04 210); --accent: oklch(0.72 0.18 26); --accent-foreground: oklch(0.98 0 0); --destructive: oklch(0.65 0.2 25); --destructive-foreground: oklch(1 0 0); --border: oklch(1 0.02 190 / 13%); --input: oklch(1 0.02 190 / 15%); --ring: oklch(0.88 0.16 178); --radius: 0.95rem; }
+@theme inline { --font-sans: 'Space Grotesk', sans-serif; --font-mono: 'IBM Plex Mono', monospace; --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--card-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground); --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring); --color-popover: var(--popover); --color-popover-foreground: var(--popover-foreground); }
+* { box-sizing: border-box; }
+html { background: #0b1020; }
+body { margin: 0; min-width: 320px; background: #0b1020; color: #f4fbfa; font-family: 'Space Grotesk', sans-serif; }
+button, select { font: inherit; }
+button { transition: transform 160ms cubic-bezier(.23,1,.32,1), background 180ms ease, border-color 180ms ease; }
+button:active { transform: scale(.97); }
+.app-shell { min-height: 100vh; display: flex; background: radial-gradient(circle at 80% -10%, rgba(44, 110, 121, .18), transparent 32%), linear-gradient(135deg, #0b1020 0%, #0d1426 58%, #121224 100%); }
+.side-rail { width: 74px; flex: 0 0 74px; min-height: 100vh; background: rgba(6, 11, 24, .72); border-right: 1px solid rgba(137, 237, 228, .1); display: flex; flex-direction: column; align-items: center; padding: 24px 0 20px; position: sticky; top: 0; height: 100vh; }
+.brand-mark { width: 36px; height: 36px; display: grid; place-items: center; border: 2px solid #63f5e7; color: #63f5e7; transform: rotate(45deg); margin-bottom: 30px; box-shadow: 0 0 20px rgba(99,245,231,.25); }
+.brand-mark span { transform: rotate(-45deg); font-weight: 700; font-size: 17px; }
+.rail-divider { height: 1px; width: 28px; background: rgba(255,255,255,.13); margin-bottom: 25px; }
+.rail-nav { display: flex; flex-direction: column; gap: 11px; }
+.rail-button, .icon-button { background: transparent; border: 1px solid transparent; color: #77839c; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px; }
+.rail-button:hover, .rail-button.active, .icon-button:hover { color: #63f5e7; background: rgba(99,245,231,.08); border-color: rgba(99,245,231,.16); }
+.rail-button.bottom { margin-top: auto; }
+.main-content { max-width: 1420px; width: 100%; padding: 0 48px 48px; margin: auto; }
+.topbar { height: 88px; display: flex; align-items: center; justify-content: space-between; }
+.brand-lockup { display: flex; gap: 12px; align-items: center; }
+.mini-mark { width: 26px; height: 26px; color: #63f5e7; border: 1px solid #63f5e7; display: grid; place-items: center; transform: rotate(45deg); font-size: 14px; }
+.mini-mark::first-letter { transform: rotate(-45deg); }
+.eyebrow { margin: 0; font: 600 11px/1 'IBM Plex Mono', monospace; letter-spacing: .17em; color: #92fff3; }
+.brand-subtitle { margin: 4px 0 0; color: #69758d; font-size: 11px; }
+.top-actions { display: flex; align-items: center; gap: 15px; }
+.live-pill, .date-stamp { font: 500 10px 'IBM Plex Mono', monospace; letter-spacing: .12em; color: #91a0b8; }
+.live-pill { display: flex; align-items: center; gap: 8px; }
+.live-dot, .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #ff6b5f; box-shadow: 0 0 10px #ff6b5f; display: inline-block; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr); min-height: 284px; border-top: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.1); position: relative; overflow: hidden; }
+.hero-grid::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(115deg, transparent 0 100px, rgba(99,245,231,.025) 101px 102px), radial-gradient(circle at 95% 15%, rgba(255,107,95,.18), transparent 28%); pointer-events: none; }
+.hero-copy { padding: 46px 30px 42px 0; position: relative; z-index: 1; }
+.section-kicker { display: flex; align-items: center; gap: 8px; color: #ff8378; font: 600 11px 'IBM Plex Mono', monospace; letter-spacing: .16em; margin-bottom: 15px; }
+h1, h2, p { margin-top: 0; }
+h1 { font-size: clamp(52px, 7vw, 90px); line-height: .88; letter-spacing: -.07em; margin-bottom: 23px; font-weight: 700; }
+h1 span { color: #63f5e7; }
+.hero-copy > p { color: #8793a8; max-width: 350px; font-size: 14px; line-height: 1.55; }
+.hero-stat-row { display: flex; gap: 32px; margin-top: 33px; }
+.hero-stat-row div { display: flex; flex-direction: column; gap: 5px; }
+.hero-stat-row strong { font-size: 18px; letter-spacing: -.03em; }
+.hero-stat-row span { color: #65728a; font: 10px 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .08em; }
+.prize-panel { background: linear-gradient(140deg, rgba(23, 39, 54, .9), rgba(25, 21, 36, .74)); border-left: 1px solid rgba(255,255,255,.11); padding: 26px 28px; position: relative; overflow: hidden; }
+.prize-grid-line { position: absolute; inset: 0; opacity: .2; background-image: linear-gradient(rgba(99,245,231,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(99,245,231,.1) 1px, transparent 1px); background-size: 28px 28px; mask-image: linear-gradient(90deg, black, transparent); }
+.prize-head, .card-header, .team-topline, .section-heading, .footer-note { display: flex; justify-content: space-between; align-items: center; }
+.prize-head { position: relative; color: #9ba7b8; font: 10px 'IBM Plex Mono', monospace; letter-spacing: .14em; }
+.prize-head svg { color: #f6c65b; }
+.prize-total { position: relative; font-size: 45px; font-weight: 700; letter-spacing: -.07em; margin: 12px 0 20px; color: #f6c65b; }
+.prize-total span { font-size: 22px; color: #b99040; }
+.prize-list { position: relative; width: 70%; display: flex; flex-direction: column; gap: 8px; }
+.prize-list div { display: grid; grid-template-columns: 26px 1fr auto; align-items: center; gap: 9px; font: 10px 'IBM Plex Mono', monospace; color: #8490a5; }
+.prize-list strong { color: #e4ebea; font-size: 11px; }
+.prize-rank { display: grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; font-size: 9px; }
+.gold { color: #0c1625; background: #f6c65b; } .silver { color: #132033; background: #b9c6d0; } .bronze { color: #fff2e4; background: #bd775a; }
+.prize-trophy { position: absolute; right: 20px; bottom: 18px; color: rgba(246,198,91,.19); transform: rotate(7deg); }
+.toolbar-row { padding: 27px 0 20px; display: flex; justify-content: space-between; align-items: end; }
+.muted { color: #68758e; margin-bottom: 9px; }
+.week-select-wrap { position: relative; display: block; width: 270px; }
+.week-select-wrap select { width: 100%; appearance: none; background: #121c30; color: #dce8e7; border: 1px solid rgba(99,245,231,.23); border-radius: 8px; padding: 12px 38px 12px 14px; outline: none; font-size: 13px; }
+.week-select-wrap svg { position: absolute; right: 12px; top: 12px; color: #63f5e7; pointer-events: none; }
+.draw-button { background: #63f5e7 !important; color: #0b1725 !important; border: 0 !important; font-weight: 700; padding: 12px 17px; border-radius: 8px; box-shadow: 0 7px 20px rgba(99,245,231,.15); }
+.draw-button:hover { background: #8bfff3 !important; transform: translateY(-2px); }
+.dashboard-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(290px, .65fr); gap: 18px; }
+.ranking-card, .wheel-card, .team-card { border: 1px solid rgba(255,255,255,.1); background: rgba(18, 28, 48, .77); box-shadow: 0 18px 50px rgba(0,0,0,.12); border-radius: 13px; }
+.ranking-card, .wheel-card { padding: 24px; }
+h2 { font-size: 23px; letter-spacing: -.045em; margin-bottom: 0; }
+.card-header { margin-bottom: 23px; align-items: start; }
+.card-header > svg { color: #8493a8; }
+.season-badge { background: rgba(99,245,231,.1); border: 1px solid rgba(99,245,231,.22); color: #63f5e7; font: 10px 'IBM Plex Mono', monospace; letter-spacing: .08em; padding: 6px 8px; }
+.ranking-list { display: flex; flex-direction: column; }
+.ranking-row { display: grid; grid-template-columns: 30px 34px minmax(90px, .7fr) minmax(80px, 1fr) auto; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.07); }
+.rank-number { font: 12px 'IBM Plex Mono', monospace; color: #5c6b83; }
+.podium-number { color: #f6c65b; }
+.player-avatar { width: 33px; height: 33px; border-radius: 50%; display: grid; place-items: center; color: #07121f; font: 600 10px 'IBM Plex Mono', monospace; border: 2px solid rgba(255,255,255,.14); }
+.rank-player { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.rank-player strong { font-size: 13px; }
+.rank-player span { font: 9px 'IBM Plex Mono', monospace; color: #65748d; white-space: nowrap; }
+.progress-track { height: 5px; background: rgba(255,255,255,.08); border-radius: 10px; overflow: hidden; }
+.progress-track span { display: block; height: 100%; border-radius: 10px; box-shadow: 0 0 12px currentColor; }
+.rank-points { font-size: 15px; min-width: 55px; text-align: right; }
+.rank-points small, .team-score span { color: #6f7d95; font: 10px 'IBM Plex Mono', monospace; }
+.wheel-card { position: relative; display: flex; flex-direction: column; align-items: center; overflow: hidden; }
+.wheel-card .card-header { width: 100%; }
+.spin-icon { animation: spin .7s linear infinite; color: #63f5e7; }
+.wheel { margin: 3px 0 20px; width: 163px; height: 163px; border-radius: 50%; border: 7px solid #192943; background: conic-gradient(#63f5e7 0 60deg, #ff6b5f 60deg 120deg, #f6c65b 120deg 180deg, #9b84ff 180deg 240deg, #63f5e7 240deg 300deg, #ff6b5f 300deg 360deg); box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 0 28px rgba(99,245,231,.15); position: relative; transition: transform 1.5s cubic-bezier(.12,.85,.18,1); }
+.wheel-spinning { animation: wheelSpin 1.5s cubic-bezier(.12,.85,.18,1); }
+.wheel-segments { position: absolute; inset: 0; color: #081323; font: 600 10px 'IBM Plex Mono', monospace; }
+.wheel-segments span { position: absolute; left: 72px; top: 7px; transform-origin: 9px 72px; }
+.wheel-segments span:nth-child(2) { transform: rotate(60deg); } .wheel-segments span:nth-child(3) { transform: rotate(120deg); } .wheel-segments span:nth-child(4) { transform: rotate(180deg); } .wheel-segments span:nth-child(5) { transform: rotate(240deg); } .wheel-segments span:nth-child(6) { transform: rotate(300deg); }
+.wheel-center { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%,-50%); width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: #0f192c; color: #63f5e7; border: 5px solid #192943; font-weight: 700; font-size: 17px; }
+.wheel-pointer { position: absolute; top: 81px; right: 31px; border-left: 9px solid transparent; border-right: 9px solid transparent; border-top: 15px solid #ff6b5f; filter: drop-shadow(0 0 5px rgba(255,107,95,.55)); }
+.wheel-caption { color: #7d8aa0; font-size: 12px; text-align: center; margin: 0 0 15px; min-height: 18px; }.wheel-caption strong { color: #63f5e7; }
+.wheel-action { background: transparent !important; color: #d9e8e6 !important; border-color: rgba(255,255,255,.16) !important; width: 100%; justify-content: center; gap: 8px; }
+.wheel-action:hover { border-color: #63f5e7 !important; color: #63f5e7 !important; }
+.week-result-section { margin-top: 38px; }.section-heading { align-items: end; margin-bottom: 17px; }.section-heading h2 { text-transform: lowercase; }.date-stamp { padding-bottom: 3px; }
+.teams-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }.team-card { padding: 23px; position: relative; overflow: hidden; }.team-card::after { content: ''; position: absolute; right: -50px; bottom: -80px; width: 190px; height: 190px; border-radius: 50%; background: currentColor; opacity: .07; }.team-card.cyan { color: #63f5e7; }.team-card.coral { color: #ff6b5f; }.team-topline { position: relative; z-index: 1; gap: 9px; justify-content: start; font: 600 11px 'IBM Plex Mono', monospace; letter-spacing: .14em; }.team-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 10px currentColor; }.champion-badge { margin-left: auto; background: rgba(246,198,91,.12); color: #f6c65b; border: 1px solid rgba(246,198,91,.3); font: 9px 'IBM Plex Mono', monospace; letter-spacing: .08em; gap: 4px; }.team-score { position: relative; z-index: 1; font-size: 58px; letter-spacing: -.08em; font-weight: 700; margin: 27px 0 15px; }.team-members { display: flex; flex-wrap: wrap; gap: 7px; position: relative; z-index: 1; }.team-members span { color: #b2becc; background: rgba(255,255,255,.06); padding: 6px 9px; border-radius: 5px; font: 10px 'IBM Plex Mono', monospace; }.winner-shout { margin-top: 20px; color: #f6c65b; font: 10px 'IBM Plex Mono', monospace; position: relative; z-index: 1; }.footer-note { padding: 18px 2px 0; color: #5f6d85; font: 10px 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .08em; }.footer-note > span { display: flex; align-items: center; gap: 7px; }.arrow { color: #63f5e7; font-size: 16px; }
+@keyframes wheelSpin { from { transform: rotate(0); } to { transform: rotate(1250deg); } } @keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+@media (max-width: 900px) { .main-content { padding: 0 25px 35px; }.hero-grid, .dashboard-grid { grid-template-columns: 1fr; }.prize-panel { min-height: 235px; border-left: 0; border-top: 1px solid rgba(255,255,255,.11); }.hero-copy { padding-right: 0; }.prize-trophy { right: 25%; }.wheel-card { min-height: 390px; }.wheel-pointer { right: calc(50% - 95px); } }
+@media (max-width: 620px) { .side-rail { display: none; }.main-content { padding: 0 18px 30px; }.topbar { height: 72px; }.brand-subtitle { display: none; }.hero-grid { margin: 0 -18px; }.hero-copy { padding: 38px 18px 35px; }h1 { font-size: 64px; }.hero-stat-row { gap: 18px; }.hero-stat-row strong { font-size: 15px; }.toolbar-row { align-items: stretch; flex-direction: column; gap: 17px; }.week-select-wrap { width: 100%; }.draw-button { justify-content: center; }.ranking-card, .wheel-card { padding: 18px; }.ranking-row { grid-template-columns: 25px 31px minmax(80px, 1fr) auto; gap: 8px; }.progress-track { display: none; }.teams-grid { grid-template-columns: 1fr; }.section-heading { align-items: start; flex-direction: column; gap: 9px; }.team-score { font-size: 51px; }.footer-note { align-items: start; flex-direction: column; gap: 12px; } }
+
+/* Ajustes de assinatura Arena Neon: molduras de placar, diagonais e marca das seis cunhas. */
+.ranking-card, .wheel-card, .team-card { border-radius: 3px; clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px)); }
+.ranking-card::before, .wheel-card::before, .team-card::before { content: ''; position: absolute; pointer-events: none; top: 0; left: 0; width: 44px; height: 1px; background: #63f5e7; box-shadow: 60px 0 0 rgba(99,245,231,.22); }
+.team-card.coral::before { background: #ff6b5f; box-shadow: 60px 0 0 rgba(255,107,95,.22); }
+.ranking-card, .wheel-card { position: relative; }
+.brand-mark { position: relative; background: conic-gradient(from 0deg, #63f5e7 0 12deg, transparent 12deg 60deg, #ff6b5f 60deg 72deg, transparent 72deg 120deg, #f6c65b 120deg 132deg, transparent 132deg 180deg, #a48cff 180deg 192deg, transparent 192deg 240deg, #63f5e7 240deg 252deg, transparent 252deg 300deg, #ff6b5f 300deg 312deg, transparent 312deg); }
+.brand-mark span { width: 25px; height: 25px; display: grid; place-items: center; background: #0b1020; border-radius: 50%; }
+.mini-mark { background: conic-gradient(from 0deg, #63f5e7 0 18deg, transparent 18deg 60deg, #ff6b5f 60deg 78deg, transparent 78deg 120deg, #f6c65b 120deg 138deg, transparent 138deg 180deg, #a48cff 180deg 198deg, transparent 198deg 240deg, #63f5e7 240deg 258deg, transparent 258deg 300deg, #ff6b5f 300deg 318deg, transparent 318deg); border: 0; }
+.mini-mark::after { content: '✦'; transform: rotate(-45deg); color: #0b1020; font-size: 13px; }
+.mini-mark { font-size: 0; }
+.prize-panel { clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%); }
+.hero-grid::after { content: 'WEEKLY // 01'; position: absolute; right: 22px; bottom: 15px; color: rgba(99,245,231,.35); font: 9px 'IBM Plex Mono', monospace; letter-spacing: .16em; }
+.section-heading h2 { font-weight: 700; }
+
+/* Resultado da roleta: painel compacto de transmissão para as duas equipas sorteadas. */
+.drawn-teams { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 0 0 12px; }
+.drawn-teams div { padding: 8px 9px; background: rgba(255,255,255,.045); border-left: 2px solid #63f5e7; min-width: 0; }
+.drawn-teams div:last-child { border-left-color: #ff6b5f; }
+.drawn-teams span { display: block; color: #7d8aa0; font: 9px 'IBM Plex Mono', monospace; letter-spacing: .1em; margin-bottom: 5px; }
+.drawn-teams strong { display: block; color: #eaf5f2; font: 10px 'IBM Plex Mono', monospace; line-height: 1.35; }
+@media (max-width: 620px) { .drawn-teams { gap: 5px; } .drawn-teams strong { font-size: 9px; } }
