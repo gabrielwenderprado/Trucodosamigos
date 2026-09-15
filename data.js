@@ -7,5 +7,5 @@ const weeks={
   4:{date:'02 SET 2026',teams:[['TIME 1',['Lucas','Felipe','Rosivaldo'],7,true],['TIME 2',['Dudu','Du','Gabriel'],3,false]]},
   5:{date:'25 AGO 2026',teams:[['TIME 1',['Gabriel','lucas','du'],5,false],['TIME 2',['rosivaldo','dudu','felipe'],3,true]]},
   6:{date:'25 AGO 2026',teams:[['TIME 1',['Gabriel','lucas','dudu'],6,false],['TIME 2',['rosivaldo','du','felipe'],4,true]]},
-  7:{date:'25 AGO 2026',teams:[['TIME 1',['du','lucas','dudu'],0,false],['TIME 2',['rosivaldo','gabriel','felipe'],0,true]]}
+  7:{date:'25 AGO 2026',teams:[['TIME 1',['du','lucas','dudu'],1,false],['TIME 2',['rosivaldo','gabriel','felipe'],2,true]]}
 };
