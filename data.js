@@ -1,5 +1,5 @@
 // EDITAR AQUI: altere nomes, pontos e semanas antes de publicar no GitHub.
-const players=[['Gabriel',3,'GA'],['Dudu',2,'DU'],['Du',2,'DO'],['Lucas',5,'LU'],['Felipe',3,'FE'],['Rosivaldo',3,'RO']];
+const players=[['Gabriel',4,'GA'],['Dudu',2,'DU'],['Du',2,'DO'],['Lucas',5,'LU'],['Felipe',4,'FE'],['Rosivaldo',4,'RO']];
 const weeks={
   1:{date:'18 AGO 2026',teams:[['TIME 1',['Dudu','Rosivaldo','Du'],12,true],['TIME 2',['Gabriel','Lucas','Felipe'],10,false]]},
   2:{date:'18 AGO 2026',teams:[['TIME 1',['Dudu','Rosivaldo','Du'],14,true],['TIME 2',['Gabriel','Lucas','Felipe'],18,false]]},
@@ -7,5 +7,6 @@ const weeks={
   4:{date:'02 SET 2026',teams:[['TIME 1',['Lucas','Felipe','Rosivaldo'],7,true],['TIME 2',['Dudu','Du','Gabriel'],3,false]]},
   5:{date:'25 AGO 2026',teams:[['TIME 1',['Gabriel','lucas','du'],5,false],['TIME 2',['rosivaldo','dudu','felipe'],3,true]]},
   6:{date:'25 AGO 2026',teams:[['TIME 1',['Gabriel','lucas','dudu'],6,false],['TIME 2',['rosivaldo','du','felipe'],4,true]]},
-  7:{date:'25 AGO 2026',teams:[['TIME 1',['du','lucas','dudu'],2,false],['TIME 2',['rosivaldo','gabriel','felipe'],3,true]]}
+  7:{date:'25 AGO 2026',teams:[['TIME 1',['du','lucas','dudu'],3,false],['TIME 2',['rosivaldo','gabriel','felipe'],5,true]]},
+  8:{date:'25 AGO 2026',teams:[['TIME 1',['','',''],0,false],['TIME 2',['','',''],0,true]]}
 };
