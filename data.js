@@ -11,5 +11,5 @@ const weeks={
   8:{date:'02 out 2026',teams:[['TIME 1',['Lucas','Felipe','gabriel','rafaela'],5,false],['TIME 2',['Du','DuDu','rosivaldo'],5,true]]},
   9:{date:'02 out 2026',teams:[['TIME 1',['rafaela','Felipe','dudu'],0,false],['TIME 2',['Du','gabriel','rosivaldo','lucas'],2,true]]},
   10:{date:'02 out 2026',teams:[['TIME 1',['rafaela','Felipe','Rosivaldo'],0,false],['TIME 2',['Du','gabriel','dudu','lucas'],4,true]]},
-  11:{date:'02 out 2026',teams:[['TIME 1',['rafaela','gabriel','lucas'],0,false],['TIME 2',['Du','felipe','dudu','rosivaldo'],4,true]]},
+  11:{date:'02 out 2026',teams:[['TIME 1',['rafaela','gabriel','lucas'],2,false],['TIME 2',['Du','felipe','dudu','rosivaldo'],4,true]]},
 };
