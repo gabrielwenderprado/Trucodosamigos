@@ -1,5 +1,5 @@
 // EDITAR AQUI: altere nomes, pontos e semanas antes de publicar no GitHub.
-const players=[['Lucas',9,'LU'],['Gabriel',8,'GA'],['Felipe',9,'FE'],['Rosivaldo',9,'RO'],['Dudu',5,'DU'],['Rafaela',3,'RA'],['Du',4,'DO']];
+const players=[['Lucas',11,'LU'],['Gabriel',10,'GA'],['Felipe',11,'FE'],['Rosivaldo',11,'RO'],['Dudu',7,'DU'],['Rafaela',5,'RA'],['Du',6,'DO']];
 const drawPlayers = [...players];
 const weeks={
   1:{date:'18 AGO 2026',teams:[['TIME 1',['Dudu','Gabriel','Du'],12,true],['TIME 2',['Rosivaldo','Lucas','Felipe'],10,false]]},
@@ -12,4 +12,6 @@ const weeks={
   9:{date:'02 out 2026',teams:[['TIME 1',['rafaela','Felipe','dudu'],0,false],['TIME 2',['Du','gabriel','rosivaldo','lucas'],2,true]]},
   10:{date:'02 out 2026',teams:[['TIME 1',['rafaela','Felipe','Rosivaldo'],0,false],['TIME 2',['Du','gabriel','dudu','lucas'],4,true]]},
   11:{date:'02 out 2026',teams:[['TIME 1',['rafaela','gabriel','lucas'],4,false],['TIME 2',['Du','felipe','dudu','rosivaldo'],4,true]]},
+  12:{date:'02 out 2026',teams:[['TIME 1',['rafaela','gabriel','lucas'],4,false],['TIME 2',['Du','felipe','dudu','rosivaldo'],4,true]]},
+  13:{date:'02 out 2026',teams:[['TIME 1',['rafaela','gabriel','lucas','DUDU'],0,false],['TIME 2',['Du','felipe','rosivaldo'],0,true]]},
 };
